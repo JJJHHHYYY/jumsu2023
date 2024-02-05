@@ -90,13 +90,13 @@ elif menu == '학교평균 및 점수분포':
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 10))
 
     # 국어 점수 히스토그램
-    ax1.hist(data['국어 점수'], bins=250, range=(0,60), color='skyblue', edgecolor='black')
+    ax1.hist(data['국어 점수'], bins=50, range=(0,60), color='skyblue', edgecolor='black')
     ax1.set_title('Korea Frequency histogram')
     ax1.set_xlabel('Score')
     ax1.set_ylabel('Number')
 
     # 수학 점수 히스토그램
-    ax2.hist(data['수학 점수'], bins=100, range=(0,60), color='lightcoral', edgecolor='black')
+    ax2.hist(data['수학 점수'], bins=50, range=(0,60), color='lightcoral', edgecolor='black')
     ax2.set_title('Math Frequency histogram ')
     ax2.set_xlabel('Score')
     ax2.set_ylabel('Number')
