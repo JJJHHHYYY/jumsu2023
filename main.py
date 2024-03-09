@@ -27,7 +27,7 @@ def main():
     st.title("개인성적조회 시스템")
 
     # CSV 데이터를 데이터프레임으로 읽기
-    data = pd.read_csv("202401test.csv")
+    data = pd.read_csv("202402test.csv")
 
     # 전체 데이터의 평균과 표준편차 계산
     global_mean_korean = data['국어 점수'].mean()
@@ -75,7 +75,7 @@ if menu == '개인성적조회':
 
 
 elif menu == '학교평균 및 점수분포':
-    data = pd.read_csv("202401test.csv")
+    data = pd.read_csv("202402test.csv")
     # 학교별 국어와 수학의 평균 점수 계산
     school_avg_scores = data.groupby('학교')[['국어 점수', '수학 점수']].mean()
 
@@ -90,13 +90,13 @@ elif menu == '학교평균 및 점수분포':
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 10))
 
     # 국어 점수 히스토그램
-    ax1.hist(data['국어 점수'], bins=30, range=(25,60), color='skyblue', edgecolor='black')
+    ax1.hist(data['국어 점수'], bins=30, range=(50,90), color='skyblue', edgecolor='black')
     ax1.set_title('Korea Frequency histogram')
     ax1.set_xlabel('Score')
     ax1.set_ylabel('Number')
 
     # 수학 점수 히스토그램
-    ax2.hist(data['수학 점수'], bins=30, range=(25,60), color='lightcoral', edgecolor='black')
+    ax2.hist(data['수학 점수'], bins=30, range=(50,90), color='lightcoral', edgecolor='black')
     ax2.set_title('Math Frequency histogram ')
     ax2.set_xlabel('Score')
     ax2.set_ylabel('Number')
